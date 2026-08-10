@@ -1,9 +1,11 @@
 
-INSERT COMMAND:
+INSERT COMMAND:---->>>
+
 the insert command in mysql is dml command which is used to add new record into table
 
-case 1: insert values in all columns 
-Insert into tablename values (val1, val2, val3...)
+CASE 1: insert values in all columns ---->>>>>
+
+SYNTAX:  Insert into tablename values (val1, val2, val3...)
 
 
 mysql> use batch18;
@@ -30,11 +32,11 @@ mysql> select * from pystudent;
 
 
 
-case2 : insert values into spefic colums  if we dont want 
+CASE 2 : insert values into spefic colums  if we dont want 
 to insert data into every col or if we are 
 providing all the values but order not followed the we need to provide col list 
 
-insert into tablename(col1, col2, col3) values (val1, val2, val3);
+SYNTAX:  insert into tablename(col1, col2, col3) values (val1, val2, val3);
 
 
 
@@ -55,15 +57,15 @@ mysql> select * from pystudent;
 
 
 
-note:  best practice---->>>>
+NOTE :  BEST PRACTICE---->>>>
 always specifies the col names while inserting the data this makes the query easiare to read 
 
 
-inserting multiple row:---->
+INSERTING MULTIPLE ROWS:---->
 
 instead of writing multiple insert statements we can insert  many rows in one statement 
 
-insert into tablename values(val1, val2, val...), (val1, val2, val...)
+SYNTAX: insert into tablename values(val1, val2, val...), (val1, val2, val...)
 
 
 
@@ -87,7 +89,7 @@ mysql> select * from pystudent;
 
 
 
-insert using set:  mysql also supports the set syntax:  
+INSERT USING SET:  mysql also supports the set syntax:  
 
 insert into pystudent set id=108, name='riya', age=25, city='devas';
 --Query OK, 1 row affected (0.03 sec)
@@ -116,7 +118,7 @@ like oracle sql server and postgresql do not support this syntax.
 
 insert data from another table: we can copy records from one table to another table 
 
-create table pybackup as select * from pystudent where 1=0;
+SYNTAX:  create table pybackup as select * from pystudent where 1=0;
 
 
 mysql> create table pybackup as select * from pystudent where 1=0;
@@ -187,13 +189,15 @@ mysql> select * from pybackup;
 
 
 
-Ruels for insert:---->>
+RULES for INSERT:---->>
 
 values must match with col order.
 wrong order can to errors 
 number of values must match with number or col 
 
-#PRYMARY KEY
+
+
+PRYMARY KEY: --->>>
 
 A primary key is a col or group of cols whos values uniqly identifies each row in a table
 it does not allow duplicate values or null values.
@@ -206,7 +210,7 @@ data integrity will be reduce:
 searching records become less relaible.
 
 
-CHARACTERISTICS OF PK:
+CHARACTERISTICS OF PK:---->>>
 
 uniqe values
 cannot contain null
@@ -219,7 +223,7 @@ automatically creates a uniq index on that col.
 values of a pk should be stable.
 
 
-WAY ONE: 
+WAY ONE:---->>>> 
 
 mysql> create table pyemployee(empid int primary key,name varchar(22), salary decimal(10,2));
 --Query OK, 0 rows affected (0.06 sec)
@@ -239,7 +243,7 @@ mysql> desc pyemployee;
 
 
 
-WAY TWO:
+WAY TWO: ---->>>>
 
 mysql> create table pyemployee1(empid int,name varchar(22), salary decimal(10,2), constraint pk_employee primary key(empid));
 --Query OK, 0 rows affected (0.06 sec)
@@ -275,7 +279,7 @@ mysql> desc pyemployee2;
 
 
 
-WAY 3: 
+WAY 3: ---->>>>
 
 mysql> create table pyemployee3(empid int, name varchar(22), salary decimal(10,2));
 --Query OK, 0 rows affected (0.06 sec)
