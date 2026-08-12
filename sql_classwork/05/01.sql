@@ -3,7 +3,7 @@
 =======================================================
 
 There are several reason why gaps can occure.
-1. if we perform deletw operation
+1. if we perform delete operation
 
 student table
 ------------
@@ -107,8 +107,8 @@ Insert on duplicate key update is a mysql specific extention
 of the insert statment that allow you to insert a now record
 into a table. 
 
-If the inserted row volited pk or unique key constaints then
-mysql updates the exixting record inseat og generationg an error.
+If the inserted row voilated pk or unique key constaints then
+mysql updates the existing record inseat of generating an error.
 
 
 
@@ -148,7 +148,7 @@ mysql> select * from pyemployee;
          SHOW CREATE TABLE tablename in my sql::::::
 ============================================================
 
-it is a mysql command use to desplay the exact sql statement.
+it is a mysql command use to display the exact sql statement.
 that was use to create an existing table it shows the complite
 table structure.
 
@@ -251,7 +251,7 @@ mysql> select * from  pystd;
 3 rows in set (0.02 sec)
 
 
-mysql> truncate table  pystd where sid = 2;   ///invalid
+mysql> truncate table  pystd where sid = 101;   ///invalid
 
 ERROR 1064 (42000): You have an error in your SQL syntax; 
 check the manual that corresponds to your MySQL server
@@ -286,8 +286,10 @@ mysql> desc pytruncate;
 2 rows in set (0.00 sec)
 
 
+mysql> insert into pytrunc values(1,'deepika'),(2, 'rashmika'), (3, 'vaibhav');
 Query OK, 3 rows affected (0.01 sec)
 Records: 3  Duplicates: 0  Warnings: 0
+
 
 
 mysql> select * from pytruncate;
