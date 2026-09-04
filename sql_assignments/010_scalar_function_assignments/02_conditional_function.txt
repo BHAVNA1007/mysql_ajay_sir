@@ -1,0 +1,45 @@
+Create a table with these columns:
+
+Column	Data Type
+staff_id	INT, Primary Key, Auto Increment
+staff_name	VARCHAR(50)
+department	VARCHAR(30)
+city	VARCHAR(30)
+salary	DECIMAL(10,2)
+experience	INT
+age	INT
+email	VARCHAR(100), NULL allowed
+phone	VARCHAR(15), NULL allowed
+bonus	DECIMAL(10,2), NULL allowed
+status	VARCHAR(20)
+Data
+
+Q1. IF()
+Display staff_name, salary, and salary status. If salary is ₹60,000 or more, show 'High Salary', otherwise 'Low Salary'.
+
+Q2. IF()
+Display staff_name and experience status. If experience is 5 or more, show 'Experienced', otherwise 'Fresher'.
+
+Q3. IFNULL()
+Display staff_name and email. If email is NULL, display 'Email Not Available'.
+
+Q4. COALESCE()
+Display staff_name and contact information. Give priority to phone → email → 'No Contact'.
+
+Q5. NULLIF()
+Display staff_name and salary. If salary is exactly ₹50,000, return NULL; otherwise return the actual salary.
+
+Q6. CASE
+Create a salary category:
+
+salary >= 80,000 → 'High'
+salary >= 60,000 → 'Medium'
+Otherwise → 'Low'
+
+Q7. CASE + AND/OR
+Create an employee category:
+
+IT + experience >= 5 → 'IT Experienced'
+Finance + salary >= 70,000 → 'Finance High Earner'
+HR + experience >= 3 → 'HR Experienced'
+Otherwise → 'Other'
