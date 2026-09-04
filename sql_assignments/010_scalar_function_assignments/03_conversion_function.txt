@@ -1,0 +1,68 @@
+MYSQL TYPE CONVERSION ASSIGNMENT
+
+Scenario
+A financial analytics company manages transactions, billing schedules, user registrations, and account balances using MySQL. Because data comes in from legacy flat files, API payloads, and external payment gateways, several columns contain mixed formats, text-based numbers, unformatted date strings, and floating-point representations.
+
+The finance and compliance teams need reports that require explicit and implicit type conversions (CAST, CONVERT, date/time parsing, and numeric coercion) to ensure mathematical accuracy and standardized data formats.
+
+You are given the following table and initial data. Write appropriate SELECT queries to perform the required operations.
+
+Table Name: transaction_records
+
+Columns:
+- transaction_id (VARCHAR(20), PRIMARY KEY) — Mixed string ID (e.g., 'TXN-1001')
+- customer_name (VARCHAR(50), NOT NULL) — Customer name
+- amount_str (VARCHAR(30), NOT NULL) — Transaction amount stored as string text
+- discount_pct (DECIMAL(5,2), NULL) — Discount percentage applied
+- tx_date_text (VARCHAR(30), NOT NULL) — Date stored as text in DD/MM/YYYY format
+- created_timestamp (DATETIME, NOT NULL) — System registration timestamp
+- status_code (VARCHAR(5), NOT NULL) — Numerical status stored as text ('1' or '0')
+
+Data Setup Script:
+CREATE TABLE transaction_records (transaction_id VARCHAR(20) PRIMARY KEY, customer_name VARCHAR(50) NOT NULL, amount_str VARCHAR(30) NOT NULL, discount_pct DECIMAL(5,2), tx_date_text VARCHAR(30) NOT NULL, created_timestamp DATETIME NOT NULL, status_code VARCHAR(5) NOT NULL);
+INSERT INTO transaction_records VALUES ('TXN-1001', 'Rahul Sharma', '15400.50', 5.50, '15/01/2025', '2025-01-15 10:30:00', '1'), ('TXN-1002', 'Priya Verma', '8200.00', 0.00, '22/01/2025', '2025-01-22 14:15:30', '1'), ('TXN-1003', 'Amit Patel', '12050.75', 10.00, '05/02/2025', '2025-02-05 09:45:12', '0'), ('TXN-1004', 'Neha Singh', '4500.25', NULL, '18/02/2025', '2025-02-18 16:20:00', '1'), ('TXN-1005', 'Rohit Jain', '23000.00', 12.50, '01/03/2025', '2025-03-01 11:10:05', '0'), ('TXN-1006', 'Sneha Gupta', '999.90', 2.00, '12/03/2025', '2025-03-12 18:00:00', '1'), ('TXN-1007', 'Vikas Yadav', '17500.80', 7.25, '25/03/2025', '2025-03-25 08:05:40', '1'), ('TXN-1008', 'Anjali Mehta', '3100.00', NULL, '04/04/2025', '2025-04-04 12:50:22', '0');
+
+
+QUESTIONS
+
+Explicit Numeric & String Conversions
+
+Q1.
+The finance team needs the transaction amounts as signed integer values (rounded/truncated as integer) for a high-level summary report.
+Convert amount_str into a SIGNED integer using CAST().
+
+Q2.
+The compliance system requires the string amount amount_str to be explicitly converted into a DECIMAL(10,2) numerical value using CONVERT().
+
+Q3.
+To generate a plain text invoice log, display transaction_id, customer_name, and discount_pct joined together as a single string column formatted like:
+TXN-1001 : Rahul Sharma : 5.50
+Ensure the numeric discount_pct column is safely converted to character data using CAST(... AS CHAR).
+
+Date & Time Type Conversions
+
+Q4.
+The tx_date_text column stores dates as string text in the format DD/MM/YYYY (e.g., '15/01/2025').
+Use STR_TO_DATE() to convert this text column into a valid MySQL DATE type.
+
+Q5.
+Extract and display only the date portion (YYYY-MM-DD) from created_timestamp by explicitly casting created_timestamp as a DATE type.
+
+Q6.
+Format the created_timestamp column into a readable text date string in the format "15th January 2025" using date-to-string formatting functions.
+
+Q7.
+Convert the tx_date_text column into a standard DATE format, and then display the day of the week (e.g., 'Wednesday', 'Thursday') on which each transaction occurred.
+
+Q8.
+Extract the numerical sequence from transaction_id (e.g., extract '1001' from 'TXN-1001') and explicitly convert it into an UNSIGNED integer.
+
+Q9.
+The column status_code stores active status as string '1' and inactive status as '0'.
+Write a query using CASE or IF that evaluates status_code and displays 'Active' for '1' and 'Inactive' for '0'.
+
+Q10.
+Calculate the net transaction amount after applying discount_pct.
+Since amount_str is stored as a string, perform the necessary explicit type conversion to calculate:
+Net Amount = Amount - (Amount * Discount / 100)
+Treat NULL discount values as 0%.
