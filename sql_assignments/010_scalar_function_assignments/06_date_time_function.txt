@@ -1,0 +1,399 @@
+📘 SQL ASSIGNMENT — DATE AND TIME FUNCTIONS
+
+Employee Attendance & HR Management System
+
+A company wants to maintain employee and attendance information in a **single table**. The HR department wants to analyze employee **joining dates, birth dates, project dates, attendance dates, login times, logout times, and working duration** using SQL Date & Time functions.
+
+
+# Create a Table
+
+Create a table with these columns:
+
+| Column               | Data Type                        |
+| -------------------- | -------------------------------- |
+| `attendance_id`      | INT, Primary Key, Auto Increment |
+| `employee_id`        | INT                              |
+| `employee_name`      | VARCHAR(50)                      |
+| `department`         | VARCHAR(30)                      |
+| `city`               | VARCHAR(30)                      |
+| `date_of_birth`      | DATE                             |
+| `joining_date`       | DATE                             |
+| `project_start_date` | DATETIME                         |
+| `attendance_date`    | DATE                             |
+| `login_time`         | DATETIME                         |
+| `logout_time`        | DATETIME                         |
+| `salary`             | DECIMAL(10,2)                    |
+| `attendance_status`  | VARCHAR(20)                      |
+
+---
+
+# Data
+
+Insert at least **10 attendance records** for employees from different departments and cities.
+
+Make sure the data contains:
+
+* Different birth dates
+* Different joining dates
+* Different project start dates
+* Different attendance dates
+* Different login/logout times
+* `Present` and `Late` attendance statuses
+* Employees with different salaries
+* At least two records where the same employee appears on different attendance dates
+
+---
+
+# Questions
+
+## 🟢 Basic Date Functions
+
+### Q1. DAY()
+
+Display `employee_name`, `date_of_birth`, and the **day of birth** using the `DAY()` function.
+
+---
+
+### Q2. DAYOFMONTH()
+
+Display `employee_name`, `attendance_date`, and the **day of the month** on which the employee attended.
+
+---
+
+### Q3. MONTH()
+
+Display `employee_name`, `date_of_birth`, and the **birth month number** using `MONTH()`.
+
+---
+
+### Q4. MONTH()
+
+Find employees whose **attendance month is August** using `MONTH()`.
+
+---
+
+### Q5. YEAR()
+
+Display `employee_name`, `joining_date`, and the **year in which the employee joined**.
+
+---
+
+### Q6. YEAR()
+
+Find employees whose **attendance records belong to the year 2026**.
+
+---
+
+### Q7. QUARTER()
+
+Display `employee_name`, `joining_date`, and the **quarter in which the employee joined** using `QUARTER()`.
+
+---
+
+### Q8. WEEK()
+
+Display `employee_name`, `attendance_date`, and the **week number of their attendance date** using `WEEK()`.
+
+---
+
+### Q9. DAYOFWEEK()
+
+Display `employee_name`, `attendance_date`, and the **weekday number** of their attendance date using `DAYOFWEEK()`.
+
+---
+
+### Q10. DAYOFWEEK()
+
+Find attendance records where the employee attended on a **Saturday or Sunday**.
+
+---
+
+# 🟡 Date Name Functions
+
+### Q11. MONTHNAME()
+
+Display `employee_name`, `joining_date`, and the **name of the joining month** using `MONTHNAME()`.
+
+---
+
+### Q12. DAYNAME()
+
+Display `employee_name`, `attendance_date`, and the **name of the attendance day** using `DAYNAME()`.
+
+---
+
+### Q13. MONTHNAME()
+
+Display `employee_name`, `date_of_birth`, and the **name of the birth month**.
+
+---
+
+### Q14. DAYNAME()
+
+Find employees whose attendance occurred on a **Monday**.
+
+---
+
+### Q15. DAYNAME() + MONTHNAME()
+
+Display `employee_name`, `attendance_date`, **day name**, and **month name**.
+
+---
+
+# 🔵 Current Date & Time Functions
+
+### Q16. CURDATE()
+
+Display the **current date** using `CURDATE()`.
+
+---
+
+### Q17. CURRENT_DATE()
+
+Display the current date using `CURRENT_DATE()`.
+
+---
+
+### Q18. NOW()
+
+Display the **current date and time** using `NOW()`.
+
+---
+
+### Q19. CURRENT_TIMESTAMP()
+
+Display the **current date and time** using `CURRENT_TIMESTAMP()`.
+
+---
+
+### Q20. NOW() vs CURRENT_TIMESTAMP()
+
+Display both `NOW()` and `CURRENT_TIMESTAMP()` in the same query and observe the result.
+
+---
+
+### Q21. CURTIME()
+
+Display the **current time** using `CURTIME()`.
+
+---
+
+### Q22. CURRENT_TIME()
+
+Display the current time using `CURRENT_TIME()`.
+
+---
+
+### Q23. Date and Time Components
+
+Display the **current date, current time, and current date-time** using appropriate MySQL functions.
+
+---
+
+# 🟠 EXTRACT() Function
+
+### Q24. EXTRACT()
+
+Extract the **year** from `joining_date`.
+
+---
+
+### Q25. EXTRACT()
+
+Extract the **month** from `date_of_birth`.
+
+---
+
+### Q26. EXTRACT()
+
+Extract the **day** from `attendance_date`.
+
+---
+
+### Q27. EXTRACT()
+
+Extract the **hour** from `login_time`.
+
+---
+
+### Q28. EXTRACT()
+
+Extract the **minute** from `login_time`.
+
+---
+
+### Q29. EXTRACT()
+
+Extract the **second** from `login_time`.
+
+---
+
+# 🟣 Date Addition & Subtraction
+
+### Q30. DATE_ADD()
+
+Calculate the date that occurs **30 days after each employee's joining date**.
+
+---
+
+### Q31. DATE_ADD()
+
+Calculate the **first work anniversary** of every employee.
+
+---
+
+### Q32. DATE_ADD()
+
+Calculate the date exactly **3 months after each employee's project start date**.
+
+---
+
+### Q33. DATE_SUB()
+
+Calculate the date **30 days before each attendance date**.
+
+---
+
+### Q34. DATE_SUB()
+
+Calculate the date **1 year before each employee's joining date**.
+
+---
+
+### Q35. DATE_ADD()
+
+Assuming the company's retirement age is **60 years**, calculate the expected retirement date of every employee.
+
+---
+
+# 🔴 Date Difference Functions
+
+### Q36. DATEDIFF()
+
+Calculate the **number of days between the employee's joining date and attendance date**.
+
+---
+
+### Q37. DATEDIFF()
+
+Calculate the **number of days between the employee's joining date and the current date**.
+
+---
+
+### Q38. TIMESTAMPDIFF()
+
+Calculate the approximate **number of completed years of experience** of every employee based on their joining date.
+
+---
+
+### Q39. TIMESTAMPDIFF()
+
+Calculate the approximate **age of every employee** using their date of birth.
+
+---
+
+### Q40. TIMESTAMPDIFF()
+
+Calculate the total **working hours** between `login_time` and `logout_time`.
+
+---
+
+### Q41. TIMESTAMPDIFF()
+
+Calculate the total **working minutes** between `login_time` and `logout_time`.
+
+---
+
+### Q42. TIMEDIFF()
+
+Calculate the **working duration** between `login_time` and `logout_time` using `TIMEDIFF()`.
+
+---
+
+# 🟤 Date & Time Formatting
+
+### Q43. DATE()
+
+Display `employee_name`, `project_start_date`, and only the **date portion** of `project_start_date`.
+
+---
+
+### Q44. TIME()
+
+Display `employee_name`, `login_time`, and only the **time portion** of `login_time`.
+
+---
+
+### Q45. DATE_FORMAT()
+
+Display the employee's joining date in the format:
+
+**DD-MM-YYYY**
+
+Example:
+
+`15-04-2022`
+
+---
+
+### Q46. DATE_FORMAT()
+
+Display the attendance date in the format:
+
+**DD Month YYYY**
+
+Example:
+
+`05 August 2026`
+
+---
+
+### Q47. DATE_FORMAT()
+
+Display the login time in **12-hour format with AM/PM**.
+
+Example:
+
+`09:30:00 AM`
+
+---
+
+# 🟤 Other MySQL Date Functions
+
+### Q48. LAST_DAY()
+
+Display `employee_name`, `joining_date`, and the **last date of the month in which the employee joined**.
+
+---
+
+### Q49. STR_TO_DATE()
+
+Convert the following strings into MySQL date values using `STR_TO_DATE()`:
+
+```text
+'2026-08-15'
+'2025-12-25'
+'2024-02-29'
+```
+
+---
+
+# 🏆 Q50. Final HR Attendance Report
+
+Prepare a complete attendance report containing:
+
+* Employee Name
+* Department
+* Attendance Date
+* Day Name
+* Login Time
+* Logout Time
+* Working Hours
+* Working Minutes
+* Attendance Status
+* Joining Date
+* Years of Experience
+
+Use appropriate **MySQL Date & Time functions** such as:
+
+`DAYNAME()`, `TIME()`, `TIMESTAMPDIFF()`, `DATE_FORMAT()`, etc.
