@@ -1,0 +1,101 @@
+QNO 1:
+A company wants to manage its employees and their respective departments. Each employee must belong to a department. If a department is deleted, all employees in that department should also be removed automatically.
+Tasks:
+1. Create the Departments Table
+Each department has a unique ID (DepartmentID).
+The department name must be unique.
+The department name cannot be NULL.
+
+2. Create the Employees Table
+Each employee has a unique ID (EmployeeID).
+Each employee has a name and salary, both cannot be NULL.
+Each employee must be assigned to a department (DepartmentID), which is a FOREIGN KEY referencing Departments(DepartmentID).
+If a department is deleted, all employees in that department should also be deleted.
+
+3. Insert Sample Data
+Insert at least 3 departments.
+Insert at least 5 employees (make sure at least two employees belong to the same department).
+
+4. Implement Query Constraints (Without Using JOIN)
+Write a query to list all employees and their department names (without using JOIN).
+Write a query to update an employees department.
+Try deleting a department and observe what happens to the employees under that department.
+
+
+
+
+
+
+
+
+QNO 2:-
+
+A hospital wants to store patient records and their assigned doctors. If a doctor leaves, all related patient records should be deleted.
+
+Tasks:
+Create a Doctors table:
+
+DoctorID (PRIMARY KEY, AUTO_INCREMENT)
+DoctorName (NOT NULL)
+Specialization (NOT NULL, UNIQUE)
+Create a Patients table:
+
+PatientID (PRIMARY KEY, AUTO_INCREMENT)
+PatientName (NOT NULL)
+DoctorID (FOREIGN KEY)
+Insert sample data (at least 3 doctors and 5 patients).
+
+Delete a doctor and check if related patients are removed automatically.
+
+Update a patient’s doctor to a new doctor.
+
+
+
+
+
+
+
+QNO 3:
+A library maintains a record of books and their authors. If an author is removed, their books should not be deleted, but their author information should be set to NULL.
+
+Tasks:
+Create an Authors table:
+
+AuthorID (PRIMARY KEY, AUTO_INCREMENT)
+AuthorName (NOT NULL, UNIQUE)
+Create a Books table:
+
+BookID (PRIMARY KEY, AUTO_INCREMENT)
+BookTitle (NOT NULL, UNIQUE)
+AuthorID (FOREIGN KEY )
+Insert sample data (at least 3 authors and 5 books).
+
+Delete an author and check if books remain, but the AuthorID is set to NULL.
+
+Update the author of a book to a new author.
+
+
+
+
+
+
+QNO 4:
+A university wants to track students exam results. If a student is deleted, their results should also be deleted.
+Tasks:
+Create a Students table:
+StudentID (PRIMARY KEY, AUTO_INCREMENT)
+StudentName (NOT NULL)
+
+Create an Exams table:
+ExamID (PRIMARY KEY, AUTO_INCREMENT)
+SubjectName (NOT NULL, UNIQUE)
+
+Create a Results table:
+ResultID (PRIMARY KEY, AUTO_INCREMENT)
+StudentID (FOREIGN key)
+ExamID (FOREIGN KEY)
+Score (NOT NULL, CHECK Score BETWEEN 0 AND 100)
+
+Insert sample data (at least 3 students, 3 exams, and 5 results).
+Delete a student and check if their results are removed automatically.
+Update an exam’s subject name and observe the effect.
