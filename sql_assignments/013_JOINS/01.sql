@@ -107,3 +107,44 @@ mysql> select * from employees as e join departments as d on e.dept_id = d.dept_
 --2 rows in set (0.01 sec)
 
 
+******************************************************************************************************************************
+
+Assignment 2: 
+
+LEFT JOIN Practice
+
+
+Using the same Employees and Departments tables, answer the following:
+Tasks:
+
+Write a query using LEFT JOIN to display all employees and their department names, including employees with no department.
+Modify the query to count how many employees are without a department.
+
+
+
+
+mysql> select e.emp_name, d.dept_name from employees as e LEFT JOIN departments as d ON e.dept_id = d.dept_id;
+
+--+----------+-----------+
+--| emp_name | dept_name |
+--+----------+-----------+
+--| Alice    | HR        |
+--| Bob      | IT        |
+--| Charlie  | NULL      |
+--| David    | HR        |
+--+----------+-----------+
+--4 rows in set (0.00 sec)
+
+
+
+
+mysql> select e.emp_name, d.dept_name from employees as e LEFT JOIN departments as d ON e.dept_id = d.dept_id where d.dept_name is not null;
+
+--+----------+-----------+
+--| emp_name | dept_name |
+--+----------+-----------+
+--| Alice    | HR        |
+--| Bob      | IT        |
+--| David    | HR        |
+--+----------+-----------+
+--3 rows in set (0.00 sec)
