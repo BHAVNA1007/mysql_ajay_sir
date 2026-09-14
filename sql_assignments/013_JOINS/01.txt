@@ -45,6 +45,12 @@ Consider the same tables.
 Tasks:
 Write a query using RIGHT JOIN to display all departments and their employees, including departments with no employees.
 Find the names of departments that have no employees assigned.
+
+
+
+
+
+
 Assignment 4: FULL OUTER JOIN Simulation
 Problem Statement:
 Since MySQL does not support FULL OUTER JOIN directly, use a combination of LEFT JOIN and RIGHT JOIN to display all employees and departments, ensuring that unmatched records are also included.
