@@ -1,0 +1,80 @@
+Assignment 1:
+ Understanding INNER JOIN
+Problem Statement:
+Consider the following tables:
+Employees
+emp_id emp_name dept_id
+1 Alice 101
+2 Bob 102
+3 Charlie 103
+4 David 101
+Departments
+dept_id  dept_name
+101      HR
+102     IT
+104     Finance
+
+Tasks:
+
+Write a query to display employees and their corresponding department names using INNER JOIN.
+Modify the query to display only employees who belong to the "HR" department.
+
+
+
+
+
+
+
+
+
+Assignment 2: LEFT JOIN Practice
+
+Using the same Employees and Departments tables, answer the following:
+Tasks:
+Write a query using LEFT JOIN to display all employees and their department names, including employees with no department.
+Modify the query to count how many employees are without a department.
+
+
+
+
+
+
+Assignment 3: RIGHT JOIN Practice
+Problem Statement:
+Consider the same tables.
+Tasks:
+Write a query using RIGHT JOIN to display all departments and their employees, including departments with no employees.
+Find the names of departments that have no employees assigned.
+Assignment 4: FULL OUTER JOIN Simulation
+Problem Statement:
+Since MySQL does not support FULL OUTER JOIN directly, use a combination of LEFT JOIN and RIGHT JOIN to display all employees and departments, ensuring that unmatched records are also included.
+==============================================
+
+
+
+
+
+
+
+
+Assignment 4:
+ Customer and Orders
+Problem Statement:
+A retail store wants to generate a report displaying all customers and their latest order details. The report should include customers who have not placed any orders.
+
+Tables:
+Customer (cust_id, cust_name)
+Orders (order_id, cust_id, order_date, total_amount)
+Query 1:
+Write an SQL query using LEFT JOIN to display all customers with their order details, ensuring that customers with no orders are still included in the result.
+
+Query 2:
+Problem Statement:
+The store wants to generate a report including all orders placed, even if the customer record is missing (i.e., orphan orders due to data inconsistency).
+
+Query 3:
+The store wants a comprehensive report showing all customers and all orders, even if some customers have no orders and some orders have missing customer details.
+
+Query 4:
+Problem Statement:
+The store wants to analyze all possible customer-order pairings, regardless of actual transactions.
