@@ -2,7 +2,6 @@ SQL Interview Q&A — TCL, Primary Key, Foreign Key, GROUP BY
 
 
 1. TCL
-=======
 
 Q1. What is TCL?
 
@@ -12,7 +11,6 @@ TCL stands for
 Transaction Control Language. It is used to manage transactions in a database.
 
 The main TCL commands are:
-=========================
 
 COMMIT
 ROLLBACK
@@ -63,7 +61,6 @@ Answer:
 Yes, when executed inside a transaction using a transactional storage engine such as InnoDB, provided it has not been committed.
 
 2. PRIMARY KEY
-===============
 
 Q5. What is a Primary Key?
 
@@ -133,7 +130,6 @@ So:
 Primary Key → Candidate Key → Super Key
 
 3. FOREIGN KEY
-===============
 
 Q11. What is a Foreign Key?
 
@@ -206,7 +202,7 @@ Answer:
 The foreign-key column must allow NULL.
 
 4. GROUP BY
-============
+
 
 
 Q17. What is GROUP BY?
@@ -279,7 +275,7 @@ Either include employee_name in GROUP BY or apply an appropriate aggregate funct
 
 
 🔥 Most Important Cross-Questions
-==================================
+
 Q21. Can a foreign key be a primary key?
 
 Answer:
