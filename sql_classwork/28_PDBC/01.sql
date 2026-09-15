@@ -8,10 +8,11 @@ Python follows s satndard  called python DB-API 2.0
 
 this ensures that different db modules behave similarlly.
 
-Before DB-API. every DB had its own way of connecting and accecuting queryes.
+Before DB-API. every DB had its own way of connecting and executing queries.
 DB-API provides common standard so code becomes portable, consistence, easy to maintain.
 
 It is not a library it is set of rules.
+
 
 ADVANTAGES OF API:
 ==================
