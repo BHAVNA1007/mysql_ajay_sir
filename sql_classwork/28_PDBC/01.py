@@ -39,7 +39,7 @@ finally:
 '''
 OUTPUT:
 
-PS D:\InfoBeans\MySQL_Ajay_sir\sql_classwork\28> py 01.py
+
 aree import ho gya
 Connection bhi establish ho gaya
 connection stablished
