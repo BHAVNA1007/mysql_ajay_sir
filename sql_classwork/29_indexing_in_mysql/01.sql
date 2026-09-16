@@ -322,3 +322,6 @@ mysql> SHOW INDEX FROM users;
 
 
 now see that idx_email_prefix is gone.
+
+
+
