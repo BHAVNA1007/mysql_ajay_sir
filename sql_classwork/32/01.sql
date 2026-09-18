@@ -1,0 +1,1 @@
+LAYERD ARCHITECTURE IS : SF Design approch in which an application divided into multiple layer and each layer has a specific responsibility
