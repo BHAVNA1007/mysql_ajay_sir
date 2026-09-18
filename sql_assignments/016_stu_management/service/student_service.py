@@ -2,7 +2,7 @@ from dao.student_dao import StudentDao
 
 class StudentService:
     def displaystudent(self):
-        print("processing employee request")
+        print("processing student request")
         dao = StudentDao()
         dao.getstudent()
 
