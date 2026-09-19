@@ -10,6 +10,131 @@ service = EmployeeService()
 #service.add_employee(employee)
 
 
+#update employee name by id
+id = int(input("Enter employee id which you want to update: "))
+name = input("Enter employee new name: ")
+employee = service.update_employee_by_id(id, name)
+
+
+#delete by id
+#id = int(input("enter employee id you want to delete: "))
+#employee = service.delete_employee_by_id(id)
+
+
+#search by id  19-09-2026
+#id = int(input("enter employee id you want to search"))
+#employee = service.search_employee_by_id(id)
+
+#if employee is None:
+#    print("not found")
+
+#else:
+
+#    print("id", employee.id)
+#    print("name", employee.name)
+#    print("salary", employee.salary)
+#    print()
+
+
+'''
+
+mysql> select * from pdemployee1;
++-----+----------+-----------+
+| id  | name     | salary    |
++-----+----------+-----------+
+| 101 | deepika  |  70000.00 |
+| 102 | rashmika |  70000.00 |
+| 103 | virat    |  80000.00 |
+| 104 | sneha    |  89999.00 |
+| 105 | vishnu   |  66666.00 |
+| 107 | suraj    | 899999.00 |
++-----+----------+-----------+
+6 rows in set (0.00 sec)
+
+mysql> select * from pdemployee1;
++-----+----------+-----------+
+| id  | name     | salary    |
++-----+----------+-----------+
+| 101 | deepika  |  70000.00 |
+| 102 | rashmika |  70000.00 |
+| 103 | virat    |  80000.00 |
+| 104 | sneha    |  89999.00 |
+| 105 | vishnu   |  66666.00 |
+| 107 | Bhavna   | 899999.00 |
++-----+----------+-----------+
+6 rows in set (0.00 sec)
+
+
+'''
+
+
+
+
+'''
+welcome to our website
+enter employee id you want to delete: 7849384674
+database connection created
+employee not found
+
+
+
+welcome to our website
+enter employee id you want to delete: 909090 
+database connection created
+1 employee deleted successfully.
+
+
+
+
+mysql> select * from pdemployee1;
++--------+----------+-----------+
+| id     | name     | salary    |
++--------+----------+-----------+
+|    101 | deepika  |  70000.00 |
+|    102 | rashmika |  70000.00 |
+|    103 | virat    |  80000.00 |
+|    104 | sneha    |  89999.00 |
+|    105 | vishnu   |  66666.00 |
+|    107 | suraj    | 899999.00 |
+| 909090 | krishna  | 909999.00 |
++--------+----------+-----------+
+7 rows in set (0.06 sec)
+
+mysql> select * from pdemployee1;
++-----+----------+-----------+
+| id  | name     | salary    |
++-----+----------+-----------+
+| 101 | deepika  |  70000.00 |
+| 102 | rashmika |  70000.00 |
+| 103 | virat    |  80000.00 |
+| 104 | sneha    |  89999.00 |
+| 105 | vishnu   |  66666.00 |
+| 107 | suraj    | 899999.00 |
++-----+----------+-----------+
+6 rows in set (0.00 sec)
+
+'''
+
+
+
+
+'''
+
+welcome to our website
+enter employee id you want to search 101
+database connection created
+id 101
+name deepika
+salary 70000.00
+
+
+'''
+
+
+
+
+
+'''
 Employees = service.display_all_employees()
 
 for employee in Employees:
@@ -17,7 +142,7 @@ for employee in Employees:
     print("name", employee.name)
     print("salary", employee.salary)
     print()
-
+'''
 
 
 
@@ -80,10 +205,15 @@ ID 101
 Name deepika
 salary 9000
 database connection created
-
 '''
 
 
+
+#print("welcome to our website")
+#service = EmployeeService()
+#service.displayemployee()
+#employee = Employee(909090, "krishna", 909999)
+#service.add_employee(employee)
 
 '''
 welcome to our website
@@ -96,6 +226,10 @@ database connection created
 data saved successsfully
 
 '''
+
+
+
+
 
 
 
