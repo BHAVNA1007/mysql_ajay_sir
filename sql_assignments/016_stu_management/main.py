@@ -5,19 +5,43 @@ from model.student import Student
 print("welcome to our website")
 service = StudentService()
 
-student = Student(102, 'priya', 21, 88)
-service.add_student(student)
-
-
-
-
-
-
-
-
+students = service.get_all_students()
+for student in students:
+    print("id", student.StudentID)
+    print("name", student.Name)
+    print("salary", student.Age)
+    print("marks", student.Marks)
+    print()
 '''
+welcome to our website
+dao getting all student data
+getting all students data
+database connection created
+id 101
+name Alice
+salary 20
+marks 85.50
+
+id 102
+name priya
+salary 21
+marks 88.00
+
+id 104
+name David
+salary 24
+marks 75.00
 
 
+'''    
+
+
+
+
+
+#student = Student(102, 'priya', 21, 88)
+#service.add_student(student)
+'''
 welcome to our website
 service adding student
 dao saving student data
@@ -29,6 +53,9 @@ database connection created
 data saved successfully
 
 '''
+
+
+
 
 '''
 mysql> use batch18

@@ -1,6 +1,27 @@
 from database.connection import Database
+from model.student import Student
 
 class StudentDao:
+
+    def get_all_students(self):
+        print("getting all students data")
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = 'select * from students '
+        cursor.execute(query)
+        rows = cursor.fetchall()
+        students = []
+
+        for row in rows:
+            
+            student = Student(row[0], row[1], row[2], row[3])
+            students.append(student)
+            
+        conn.close()
+        return students    
+
     def getstudent(self):
         db = Database()
         db.connect()
