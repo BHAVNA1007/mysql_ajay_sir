@@ -6,9 +6,44 @@ print("welcome to our book store")
 
 service = BookService()
 
-id = int(input("Enter book id which you want to update: "))
-name = input("Enter book new name: ")
-book = service.update_book_name_by_id(id, name)
+id = int(input("Enter book id which you want to delete: "))
+book = service.delete_book_by_id(id)
+
+'''
+welcome to our book store
+Enter book id which you want to delete: 104
+dao book delete logic
+database connection stablish
+database connection stablish
+book delete
+
+mysql> select * from book;
++-----+---------------+-------------------+--------+
+| id  | bname         | bauther           | bprice |
++-----+---------------+-------------------+--------+
+| 101 | The Alchemist | paulo coelho      | 300.00 |
+| 102 | Atomic Habits | James Clear       | 400.00 |
+| 103 | The Secret    | Rhonda Byrne      | 600.00 |
+| 104 | Ikigai        | Francess mirallas | 200.00 |
++-----+---------------+-------------------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from book;
++-----+---------------+--------------+--------+
+| id  | bname         | bauther      | bprice |
++-----+---------------+--------------+--------+
+| 101 | The Alchemist | paulo coelho | 300.00 |
+| 102 | Atomic Habits | James Clear  | 400.00 |
+| 103 | The Secret    | Rhonda Byrne | 600.00 |
++-----+---------------+--------------+--------+
+3 rows in set (0.00 sec)
+
+
+'''
+
+#id = int(input("Enter book id which you want to update: "))
+#name = input("Enter book new name: ")
+#book = service.update_book_name_by_id(id, name)
 
 '''
 welcome to our book store
@@ -18,6 +53,18 @@ dao update book name logic
 database connection stablish
 database connection stablish
 book name updated
+
+
+mysql> select * from book;
++-----+---------------+-------------------+--------+
+| id  | bname         | bauther           | bprice |
++-----+---------------+-------------------+--------+
+| 101 | The Alchemist | paulo coelho      | 300.00 |
+| 102 | Atomic Habits | James Clear       | 400.00 |
+| 103 | The Secret    | Rhonda Byrne      | 600.00 |
+| 104 | xyz           | Francess mirallas | 200.00 |
++-----+---------------+-------------------+--------+
+4 rows in set (0.00 sec)
 '''
 
 #id = int(input("enter book id which you want to see: "))

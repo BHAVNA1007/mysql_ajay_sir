@@ -3,6 +3,24 @@ from model.book import Book
 
 class BookDao:
 
+    def delete_book_by_id(self, id):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+        query = "delete from book where id = %s"
+        cursor.execute(query, (id,))
+
+        delete_count = cursor.rowcount
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        if delete_count > 0:
+            print("book delete")
+        else:
+            print("book not found")
+        return delete_count        
+
     def update_book_name_by_id(self, id, name):
         db = Database()
         conn = db.connect()
