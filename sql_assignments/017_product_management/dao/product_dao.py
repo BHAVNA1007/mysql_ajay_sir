@@ -1,7 +1,25 @@
 from database.connection import Database
+from model.product import Product 
 
 
 class ProductDao:
+
+    def get_all_products(self):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = 'select * from product'
+        cursor.execute(query)
+
+        rows = cursor.fetchall()
+        product_list = []
+        for row in rows:
+            products = Product(row[0], row[1],  row[2],  row[3])
+            product_list.append(products)
+        conn.close()
+        return product_list    
+
     def getproduct(self):
         db = Database()
         db.connect()
