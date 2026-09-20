@@ -5,6 +5,38 @@ from model.student import Student
 print("welcome to our website")
 service = StudentService()
 
+
+#id = int(input("Enter student id whom you want to delete: "))
+#student = service.student_delete_by_id(id)
+'''
+welcome to our website
+Enter student id whom you want to delete: 104
+dao student delete logic
+database connection created
+student deleted successfully
+
+
+mysql> select * from students;
++-----------+--------+------+-------+
+| StudentID | Name   | Age  | Marks |
++-----------+--------+------+-------+
+|       101 | Alice  |   20 | 85.50 |
+|       102 | priya  |   21 | 88.00 |
+|       104 | Bhavna |   24 | 75.00 |
++-----------+--------+------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select * from students;
++-----------+-------+------+-------+
+| StudentID | Name  | Age  | Marks |
++-----------+-------+------+-------+
+|       101 | Alice |   20 | 85.50 |
+|       102 | priya |   21 | 88.00 |
++-----------+-------+------+-------+
+2 rows in set (0.00 sec)
+'''
+
+
 #id = int(input("Enter student id which student name you want to update: "))
 #name = input("Enter new name: ")
 #student = service.update_student_by_id(id, name)

@@ -4,6 +4,24 @@ from model.student import Student
 class StudentDao:
 
 
+    def student_delete_by_id(self, id):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = 'delete from students where StudentID = %s'
+        cursor.execute(query, (id,))
+        delete_count = cursor.rowcount
+        conn.commit()
+
+        if delete_count > 0:
+            print("student deleted successfully")
+        else:
+            print("student not found")    
+        cursor.close()
+        conn.close()
+        return delete_count 
+
     def update_student_by_id(self, id, name):
         db = Database()
         conn = db.connect()

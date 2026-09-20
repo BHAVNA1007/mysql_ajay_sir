@@ -2,6 +2,12 @@ from dao.student_dao import StudentDao
 
 class StudentService:
 
+    def student_delete_by_id(self, id):
+        print("dao student delete logic")
+        dao = StudentDao()
+        student = dao.student_delete_by_id(id)
+        return student
+
     def update_student_by_id(self, id, name):
         print("dao student updating logic")
         dao = StudentDao()
