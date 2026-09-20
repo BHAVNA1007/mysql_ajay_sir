@@ -2,6 +2,13 @@ from dao.product_dao import ProductDao
 
 class ProductService:
 
+    def delete_product_by_id(self, id):
+        print("dao product delete logic")
+        dao = ProductDao()
+        product = dao.delete_product_by_id(id)
+        return product
+    
+
     def update_product_by_id(self, id, name):
         print("dao logic product update by id")
         dao = ProductDao()

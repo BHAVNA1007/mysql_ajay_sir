@@ -5,6 +5,40 @@ print("welcome to product management web")
 
 service = ProductService()
 
+#id = int(input("Enter product id which you want to delete: "))
+#product = service.delete_product_by_id(id)
+
+'''
+welcome to product management web
+Enter product id which you want to delete: 104
+dao product delete logic
+connection stablished
+product deteted successfully
+
+
+mysql> select * from product;
++-----+--------+------------+-----------+
+| pid | pname  | pcatogory  | price     |
++-----+--------+------------+-----------+
+| 101 | laptop | electronic | 200000.00 |
+| 102 | moblie | electronic | 100000.00 |
+| 103 | Sofa   | Furniture  |  50000.00 |
+| 104 | Almira | Furniture  |  20000.00 |
++-----+--------+------------+-----------+
+4 rows in set (0.00 sec)
+
+mysql> select * from product;
++-----+--------+------------+-----------+
+| pid | pname  | pcatogory  | price     |
++-----+--------+------------+-----------+
+| 101 | laptop | electronic | 200000.00 |
+| 102 | moblie | electronic | 100000.00 |
+| 103 | Sofa   | Furniture  |  50000.00 |
++-----+--------+------------+-----------+
+3 rows in set (0.00 sec)
+'''
+
+
 #id = int(input("Enter id which you want to update: "))
 #name = input("enter new product name: ")
 #product = service.update_product_by_id(id, name)

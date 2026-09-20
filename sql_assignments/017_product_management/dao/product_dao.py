@@ -4,6 +4,25 @@ from model.product import Product
 
 class ProductDao:
 
+    def delete_product_by_id(self, id):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = "delete from product where pid = %s"
+        cursor.execute(query, (id,))
+
+        delete_count = cursor.rowcount
+        conn.commit()
+        cursor.close()
+        conn.close()
+         
+        if delete_count > 0:
+            print("product deteted successfully")
+        else:
+            print("product not found")
+        return delete_count        
+
     def update_product_by_id(self, id, name):
         db = Database()
         conn = db.connect()
