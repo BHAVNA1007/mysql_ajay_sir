@@ -6,6 +6,20 @@ print("welcome to our book store")
 
 service = BookService()
 
+id = int(input("Enter book id which you want to update: "))
+name = input("Enter book new name: ")
+book = service.update_book_name_by_id(id, name)
+
+'''
+welcome to our book store
+Enter book id which you want to update: 104
+Enter book new name: xyz
+dao update book name logic
+database connection stablish
+database connection stablish
+book name updated
+'''
+
 #id = int(input("enter book id which you want to see: "))
 #book = service.get_book_by_id(id)
 #print("id", book.id)

@@ -3,6 +3,26 @@ from model.book import Book
 
 class BookDao:
 
+    def update_book_name_by_id(self, id, name):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = 'update book set bname = %s where id = %s'
+        cursor.execute(query, (name, id))
+
+        update_count = cursor.rowcount
+        conn.commit()
+        cursor.close()
+        conn.close()
+
+        if update_count > 0:
+            print("book name updated")
+        else:
+            print("book not found") 
+        return update_count       
+
+
     def get_book_by_id(self, id):
         print("dao getting a book by id")
         db = Database()

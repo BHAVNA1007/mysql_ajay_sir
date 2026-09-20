@@ -2,6 +2,12 @@ from dao.book_dao import BookDao
 
 class BookService:
 
+    def update_book_name_by_id(self, id, name):
+        print("dao update book name logic")
+        dao = BookDao()
+        book = dao.update_book_name_by_id(id, name)
+        return book
+
     def  get_book_by_id(self, id):
         print("getting book logic")
         dao = BookDao()
