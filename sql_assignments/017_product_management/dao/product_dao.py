@@ -4,6 +4,25 @@ from model.product import Product
 
 class ProductDao:
 
+
+    def get_product_by_id(self, id):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = 'select * from product where pid = %s'
+        cursor.execute(query, (id,))
+        row = cursor.fetchone()
+
+        cursor.close()         
+        conn.close()
+        if row is not None:
+            product = Product(row[0], row[1], row[2], row[3])
+            return product
+        return None
+
+    
+
     def get_all_products(self):
         db = Database()
         conn = db.connect()

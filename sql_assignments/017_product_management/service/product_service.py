@@ -2,6 +2,12 @@ from dao.product_dao import ProductDao
 
 class ProductService:
 
+    def get_product_by_id(self, id):
+        print("dao getting product by id logic")
+        dao = ProductDao()
+        product = dao.get_product_by_id(id)
+        return product
+
     def get_all_products(self):
         print("dao getting all products logic")
         dao = ProductDao()

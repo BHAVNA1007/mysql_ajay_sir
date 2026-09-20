@@ -5,6 +5,25 @@ print("welcome to product management web")
 
 service = ProductService()
 
+#id = int(input("Enter product id whic you want to see: "))
+#product = service.get_product_by_id(id)
+#print("id", product.pid)
+#print("name", product.pname)
+#print("catogory", product.pcatogory)
+#print("price", product.price)
+
+'''
+welcome to product management web
+Enter product id whic you want to see: 101
+dao getting product by id logic
+connection stablished
+id 101
+name laptop
+catogory electronic
+price 200000.00
+
+'''
+
 
 
 #products = service.get_all_products()
