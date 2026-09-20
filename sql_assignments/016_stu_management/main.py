@@ -5,6 +5,35 @@ from model.student import Student
 print("welcome to our website")
 service = StudentService()
 
+
+
+'''
+id = int(input("enter student id: "))
+student = service.get_student_by_id(id)
+if student is None:
+    print("student not found")
+else:
+    print("id", student.StudentID)
+    print("name", student.Name)
+    print("salary", student.Age)
+    print("marks", student.Marks)
+    print()  
+'''     
+
+'''
+welcome to our website
+enter student id: 101
+dao getting student by id
+database connection created
+id 101
+name Alice
+salary 20
+marks 85.50
+'''     
+
+
+
+'''
 students = service.get_all_students()
 for student in students:
     print("id", student.StudentID)
@@ -12,6 +41,7 @@ for student in students:
     print("salary", student.Age)
     print("marks", student.Marks)
     print()
+'''    
 '''
 welcome to our website
 dao getting all student data

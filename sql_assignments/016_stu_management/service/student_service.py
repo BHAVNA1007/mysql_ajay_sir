@@ -2,6 +2,12 @@ from dao.student_dao import StudentDao
 
 class StudentService:
 
+    def get_student_by_id(self, id):
+        print("dao getting student by id")
+        dao = StudentDao()
+        student = dao.get_student_by_id(id)
+        return student
+
     def get_all_students(self):
         print("dao getting all student data")
         dao = StudentDao()
