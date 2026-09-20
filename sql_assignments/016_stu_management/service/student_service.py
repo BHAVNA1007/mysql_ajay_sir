@@ -2,6 +2,12 @@ from dao.student_dao import StudentDao
 
 class StudentService:
 
+    def update_student_by_id(self, id, name):
+        print("dao student updating logic")
+        dao = StudentDao()
+        student = dao.update_student_by_id(id, name)
+        return student
+
     def get_student_by_id(self, id):
         print("dao getting student by id")
         dao = StudentDao()

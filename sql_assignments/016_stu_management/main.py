@@ -5,6 +5,9 @@ from model.student import Student
 print("welcome to our website")
 service = StudentService()
 
+#id = int(input("Enter student id which student name you want to update: "))
+#name = input("Enter new name: ")
+#student = service.update_student_by_id(id, name)
 
 
 '''

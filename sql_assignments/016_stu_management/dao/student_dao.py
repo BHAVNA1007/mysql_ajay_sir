@@ -3,6 +3,28 @@ from model.student import Student
 
 class StudentDao:
 
+
+    def update_student_by_id(self, id, name):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = 'update students set name = %s where StudentID = %s'
+        cursor.execute(query, (name,id))
+
+        
+        update_count = cursor.rowcount
+        conn.commit()
+
+        if update_count > 0:
+            print("Student name updated successfully")
+        else:
+            print("Student not found")    
+        
+        cursor.close()
+        conn.close()
+        return update_count
+
     def get_student_by_id(self,id):
         db = Database()
         conn = db.connect()
