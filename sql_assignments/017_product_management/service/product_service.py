@@ -2,6 +2,12 @@ from dao.product_dao import ProductDao
 
 class ProductService:
 
+    def update_product_by_id(self, id, name):
+        print("dao logic product update by id")
+        dao = ProductDao()
+        product = dao.update_product_by_id(id, name)
+        return product
+
     def get_product_by_id(self, id):
         print("dao getting product by id logic")
         dao = ProductDao()

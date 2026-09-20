@@ -4,6 +4,26 @@ from model.product import Product
 
 class ProductDao:
 
+    def update_product_by_id(self, id, name):
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = 'update product set pname = %s where pid = %s'
+        cursor.execute(query, (name, id))
+
+        update_count = cursor.rowcount
+
+        conn.commit()
+        cursor.close()
+        conn.close()    
+
+        if update_count > 0:
+            print("product updated")
+        else:
+            print("product not found")
+
+        return  update_count   
 
     def get_product_by_id(self, id):
         db = Database()
