@@ -3,6 +3,26 @@ from model.book import Book
 
 class BookDao:
 
+    def get_book_by_id(self, id):
+        print("dao getting a book by id")
+        db = Database()
+        conn = db.connect()
+        cursor = conn.cursor()
+
+        query = "select * from book where id = %s"
+        cursor.execute(query, (id,))
+
+        row = cursor.fetchone()  
+        cursor.close()
+        
+        if row is not None:
+            book = Book(row[0], row[1], row[2], row[3])
+            return book
+        
+        conn.close()
+        return None
+
+
     def get_all_books(self):
        print("dao getting book data")
        db = Database()

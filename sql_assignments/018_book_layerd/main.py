@@ -6,14 +6,37 @@ print("welcome to our book store")
 
 service = BookService()
 
-books = service.dispaly_all_book()
+#id = int(input("enter book id which you want to see: "))
+#book = service.get_book_by_id(id)
+#print("id", book.id)
+#print("bname", book.bname)
+#print("bauther", book.bauther)
+#print("price", book.bprice)
+#print()
 
-for book in books:
-    print("id", book.id)
-    print("bname", book.bname)
-    print("bauther", book.bauther)
-    print("price", book.bprice)
-    print()
+
+'''
+welcome to our book store
+enter book id which you want to see: 101
+getting book logic
+dao getting a book by id
+database connection stablish
+database connection stablish
+id 101
+bname The Alchemist
+bauther paulo coelho
+price 300.00
+'''
+
+
+
+#books = service.dispaly_all_book()
+#for book in books:
+#    print("id", book.id)
+#    print("bname", book.bname)
+#    print("bauther", book.bauther)
+#    print("price", book.bprice)
+#    print()
 
 
 
